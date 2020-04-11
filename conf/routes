@@ -1,0 +1,15 @@
+
+GET     /account/search                                     controllers.AccountController.searchAllAccounts()
+GET     /account/search/by_account/:accountNumber           controllers.AccountController.searchOneAccountByAccount(accountNumber: String)
+GET     /account/search/by_name/:name                       controllers.AccountController.searchAccountsByName(name: String)
+GET     /account/search/by_age/:age                         controllers.AccountController.searchAccountsByAgeRange(age: String)
+GET     /account/search/aggregation                         controllers.AccountController.searchAggregationByAgeAndGender()
+
+POST     /account/create                                    controllers.AccountController.createNewAccount(request: Request)
+DELETE   /account/delete/:id                                controllers.AccountController.deleteAccount(id: String)
+
+POST     /index/create                                      controllers.AccountController.createNewIndex(request: Request)
+DELETE   /index/delete/:name                                controllers.AccountController.deleteIndex(name: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
